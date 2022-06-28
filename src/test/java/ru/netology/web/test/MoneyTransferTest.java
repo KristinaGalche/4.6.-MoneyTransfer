@@ -10,10 +10,8 @@ import ru.netology.web.page.VerificationPage;
 
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-//import static ru.netology.web.data.DataHelper;
 import static ru.netology.web.data.DataHelper.getSecondCardNumber;
 import static ru.netology.web.data.DataHelper.getFirstCardNumber;
-import static ru.netology.web.data.DataHelper.getSecondCardNumber;
 import static ru.netology.web.page.Balance.pushFirstCardButton;
 import static ru.netology.web.page.Balance.pushSecondCardButton;
 
@@ -56,7 +54,7 @@ public class MoneyTransferTest {
         val firstCardBalanceFinish = firstCardBalanceStart + amount;
         val secondCardBalanceFinish = secondCardBalanceStart - amount;
         assertEquals(firstCardBalanceFinish, cardBalance.getFirstCardBalance());
-        assertEquals(secondCardBalanceFinish,cardBalance.getSecondCardBalance());
+        assertEquals(secondCardBalanceFinish, cardBalance.getSecondCardBalance());
     }
 
 
