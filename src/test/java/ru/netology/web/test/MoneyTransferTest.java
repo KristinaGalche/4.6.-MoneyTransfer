@@ -57,16 +57,17 @@ public class MoneyTransferTest {
         assertEquals(secondCardBalanceFinish, cardBalance.getSecondCardBalance());
     }
 
-
-//    @Test
-//    public void transferExtraBalance() {
-//        int amount = 50000;
-//        val cardBalance = new Balance();
-//        val firstCardBalanceStart = cardBalance.getFirstCardBalance();
-//        val secondCardBalanceStart = cardBalance.getSecondCardBalance();
-//        val transactionPage = pushSecondCardButton();
-//        transactionPage.transfer(amount, getFirstCardNumber());
-//        transactionPage.errorLimit();
-//    }
-
+    @Test
+    public void extraBalance() {
+        int amount = 50000;
+        val cardBalance = new Balance();
+        val firstCardBalanceStart = cardBalance.getFirstCardBalance();
+        val secondCardBalanceStart = cardBalance.getSecondCardBalance();
+        val transactionPage = pushFirstCardButton();
+        transactionPage.transfer(amount, getSecondCardNumber());
+        val firstCardBalanceFinish = firstCardBalanceStart + amount;
+        val secondCardBalanceFinish = secondCardBalanceStart - amount;
+        assertEquals(firstCardBalanceFinish, cardBalance.getFirstCardBalance());
+        assertEquals(secondCardBalanceFinish, cardBalance.getSecondCardBalance());
+    }
 }
