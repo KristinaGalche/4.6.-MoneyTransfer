@@ -16,14 +16,9 @@ public class TransferPage {
         sumAmount.setValue(valueOf(amount));
         fromAccount.setValue(String.valueOf(fromCard));
         clickRefresh.click();
-        new Balance();
     }
 
     public void errorLimit() {
         $(".notification__content").should(Condition.exactText("Ошибка"));
-    }
-
-    public void invalidCard() {
-        $(".notification__content").should(Condition.text("Ошибка! Произошла ошибка"));
     }
 }

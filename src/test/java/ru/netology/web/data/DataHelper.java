@@ -1,19 +1,28 @@
 package ru.netology.web.data;
 
 import lombok.Value;
-import lombok.Data;
 
-@Data
 public class DataHelper {
-    private final String login = "vasya";
-    private final String password = "qwerty123";
-    private final String verificationCode = "12345";
+    private DataHelper() {
+    }
 
-    public final String[] cards = new String[]{"5559 0000 0000 0001", "5559 0000 0000 0002"};
+    @Value
+    public static class UserInfo {
+        private String login;
+        private String password;
+    }
 
-    public String getCard(int index) {
-        String card = cards[index];
-        return card;
+    public static UserInfo getUserInfo() {
+        return new UserInfo("vasya", "qwerty123");
+    }
+
+    @Value
+    public static class VerificationCode {
+        String verificationCode;
+    }
+
+    public static VerificationCode getVerificationCode() {
+        return new VerificationCode("12345");
     }
 
     @Value

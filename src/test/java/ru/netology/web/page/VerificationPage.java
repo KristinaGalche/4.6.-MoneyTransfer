@@ -14,7 +14,7 @@ public class VerificationPage {
         codeField.shouldBe(visible);
     }
 
-    public Balance validVerify(DataHelper verificationCode) {
+    public Balance validVerify(DataHelper.VerificationCode verificationCode) {
         codeField.setValue(verificationCode.getVerificationCode());
         verifyButton.click();
         return new Balance();
